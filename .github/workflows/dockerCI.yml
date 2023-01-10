@@ -35,6 +35,7 @@ jobs:
           network: host
           tags: |
             ghcr.io/cloudschamanen/mpe:${{ github.sha }}
+            ghcr.io/cloudschamanen/mpe:latest
           labels: |
             org.opencontainers.image.source=https://github.com/cloudschamanen/mpe
 
