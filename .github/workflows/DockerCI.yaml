@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  native_build:
+    runs-on: ubuntu-latest
+    name: Build native Quarkus app
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@master
+      - name: Build native executable and upload it as an artifact
+        uses: maxday/quarkus-native-build-docker-action@1
+            outputName: myApp-runner
+            dockerfilePath: src/main/docker/Dockerfile.native-mirco
+      - name: Dockerize
+        uses: maxday/quarkus-dockerize-action@1
+        with:
+            tag: maxday/myApp
+            executablePath: myApp-runner
+
