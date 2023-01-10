@@ -12,7 +12,7 @@ jobs:
         uses: maxday/quarkus-native-build-docker-action@master
         with:
           outputName: mpe
-          dockerfilePath: src/main/docker/Dockerfile.native-mirco
+          dockerfilePath: src/main/docker/Dockerfile.native-micro
       
       - name: Dockerize
         uses: maxday/quarkus-dockerize-action@master
