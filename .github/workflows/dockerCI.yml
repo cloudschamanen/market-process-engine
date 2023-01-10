@@ -23,7 +23,7 @@ jobs:
       - name: Build container image
         uses: docker/build-push-action@v3
         with:
-          file: Dockerfile.native-micro
+          file: src/main/docker/Dockerfile.native-micro
           context: ./
           push: true
           network: host
