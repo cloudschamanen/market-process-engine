@@ -9,13 +9,13 @@ jobs:
         uses: actions/checkout@master
       
       - name: Build native executable and upload it as an artifact
-        uses: maxday/quarkus-native-build-docker-action@1
+        uses: maxday/quarkus-native-build-docker-action@v1
         with:
           outputName: mpe
           dockerfilePath: src/main/docker/Dockerfile.native-mirco
       
       - name: Dockerize
-        uses: maxday/quarkus-dockerize-action@1
+        uses: maxday/quarkus-dockerize-action@v1
         with:
           tag: cloudschamanen/mpe
           executablePath: mpe
