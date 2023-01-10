@@ -12,11 +12,16 @@ jobs:
         uses: maxday/quarkus-native-build-docker-action@master
         with:
           outputName: mpe
-          dockerfilePath: src/main/docker/Dockerfile.native-micro
+      
+      - name: Upload native executable
+        uses: actions/upload-artifact@v1
+        with:
+          name: native-executable
+          path: mpe
       
       - name: Dockerize
         uses: maxday/quarkus-dockerize-action@master
         with:
-          tag: cloudschamanen/mpe
-          executablePath: mpe
+          tag: ghcr.io/cloudschamanen/mpe
+          executablePath: native-executable/mpe
 
